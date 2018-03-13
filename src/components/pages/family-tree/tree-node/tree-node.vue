@@ -46,7 +46,7 @@
 </style>
 
 <template>
-  <div class="tree-node" :class="{ self: isSelf}" v-if="member && member.id" v-on:touchend="openActionSheet(member)">
+  <div class="tree-node" :class="{ self: isSelf}" v-if="member && member.id" v-on:click="openActionSheet(member)">
     <div class="image" :style="{ 'background-image': `url(${getImagePath(member)})`}"></div>
     <div class="text">
       {{member.name}}

@@ -8,9 +8,7 @@ export default {
   data() {
     return {
       selectedUser: {},
-      currentUser: {},
-      spouse: {},
-      children: []
+      currentUser: {}
     }
   },
 
@@ -19,29 +17,29 @@ export default {
   },
 
   mounted() {
-    this.selectedUser = UserModel.getCurrentUser();
     this.currentUser = UserModel.getCurrentUser();
 
-    this.spouse = UserModel.getMemberByProperty('spouseId', this.selectedUser.id);
-    this.children = UserModel.getMembersByProperty('fatherId', this.selectedUser.id);
+    this.selectedUser = UserModel.getCurrentUser();
+    this.selectedUser.spouse = UserModel.getMemberByProperty('spouseId', this.selectedUser.id);
+    this.selectedUser.children = UserModel.getMembersByProperty('fatherId', this.selectedUser.id);
   },
 
   methods: {
 
     addSpouse(member) {
       Contacts.pickContact().then(contact => {
-        contact.spouseId = this.selectedUser.id;
-        this.spouse = contact;
+        contact.spouseId = member.id;
+        member.spouse = contact;
         UserModel.addMember(contact);
       });
     },
 
     addChild(member) {
       Contacts.pickContact().then(contact => {
-        contact.fatherId = this.selectedUser.id;
-        contact.motherId = this.spouse.id;
-        this.children = this.children || [];
-        this.children.push(contact);
+        contact.fatherId = member.id;
+        contact.motherId = member.spouse.id;
+        member.children = member.children || [];
+        member.children.push(contact);
         UserModel.addMember(contact);
       });
     },

@@ -31,16 +31,22 @@
       </TreeNode>
 
       <TreeNode
-        :member="spouse"
+        :member="selectedUser.spouse"
         @delete="deleteSpouse"
-        ></TreeNode>
+        @addSpouse="addSpouse"
+        @addChild="addChild">
+      </TreeNode>
 
     </div>
 
     <div class="children">
-      <div class="tree-list-item" v-for="child in children" :key="child.id">
-        <TreeNode :member="child" @delete="deleteChildMember"></TreeNode>
-        <!-- <TreeNode :member="getSpouseOfChild(child)"></TreeNode> -->
+      <div class="tree-list-item" v-for="child in selectedUser.children" :key="child.id">
+        <TreeNode :member="child"
+          @delete="deleteChildMember"
+          @addSpouse="addSpouse"
+          @addChild="addChild">
+        </TreeNode>
+        <TreeNode :member="child.spouse"></TreeNode>
       </div>
     </div>
 
