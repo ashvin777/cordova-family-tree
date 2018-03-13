@@ -31,6 +31,10 @@ export default {
     Contacts
       .getList()
       .then(contacts => {
+
+        console.log(contacts);
+        localStorage.contacts = contacts;
+
         contacts.forEach(contact => {
           this.members.push({
             name: contact.displayName,

@@ -19,10 +19,10 @@ function startVue() {
 
 }
 
-if (window.cordova) {
-  document.addEventListener('deviceready', startVue, false);
-} else {
+// if (window.cordova) {
+//   document.addEventListener('deviceready', startVue, false);
+// } else {
   startVue();
-}
+// }
 
 Vue.config.productionTip = false;

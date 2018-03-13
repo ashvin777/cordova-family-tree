@@ -17,6 +17,16 @@ export default {
   },
 
   mounted() {
+
+
+    Contacts
+      .getList()
+      .then(contacts => {
+
+        console.log(JSON.stringify(contacts));
+
+      });
+
     this.currentUser = UserModel.getCurrentUser();
 
     this.selectedUser = UserModel.getCurrentUser();
