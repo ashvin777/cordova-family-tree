@@ -2,11 +2,13 @@
 <style scoped lang="scss">
 .page {
   padding-top: 1.5rem;
+  overflow: scroll;
 
   .tree-list-item {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    width: 100%;
     padding: 0 1rem;
+    clear: both;
   }
 
   .children{
@@ -27,14 +29,17 @@
         @addSpouse="addSpouse"
         @addChild="addChild">
       </TreeNode>
-{{spouse}}
-      <TreeNode :member="spouse"></TreeNode>
+
+      <TreeNode
+        :member="spouse"
+        @delete="deleteSpouse"
+        ></TreeNode>
 
     </div>
 
     <div class="children">
       <div class="tree-list-item" v-for="child in children" :key="child.id">
-        <TreeNode :member="child"></TreeNode>
+        <TreeNode :member="child" @delete="deleteChildMember"></TreeNode>
         <!-- <TreeNode :member="getSpouseOfChild(child)"></TreeNode> -->
       </div>
     </div>

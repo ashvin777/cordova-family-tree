@@ -6,12 +6,16 @@
 .tree-node{
   vertical-align: middle;
   margin: 1rem 0;
+  margin-left: 3%;
   max-width: 50%;
   width: 46%;
   display: flex;
   align-items: center;
   background: $lightest-gray;
   border-radius: 28px;
+  height: 40px;
+  float: left;
+  transition: all 300ms;
 
   .text{
     padding: 0 10px;
@@ -42,7 +46,7 @@
 </style>
 
 <template>
-  <div class="tree-node" :class="{ self: isSelf}" v-if="member && member.id" v-on:click="openActionSheet(member)">
+  <div class="tree-node" :class="{ self: isSelf}" v-if="member && member.id" v-on:touchend="openActionSheet(member)">
     <div class="image" :style="{ 'background-image': `url(${getImagePath(member)})`}"></div>
     <div class="text">
       {{member.name}}

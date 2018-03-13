@@ -36,6 +36,8 @@ export default {
             this.$emit(EVENTS.ADD_SPOUSE, this.member);
           } else if (buttonIndex === 2) {
             this.$emit(EVENTS.ADD_CHILD, this.member);
+          } else if (buttonIndex === 3) {
+            this.$emit(EVENTS.DELETE, this.member);
           }
 
         });

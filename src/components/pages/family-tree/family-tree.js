@@ -9,7 +9,8 @@ export default {
     return {
       selectedUser: {},
       currentUser: {},
-      children: {}
+      spouse: {},
+      children: []
     }
   },
 
@@ -20,47 +21,40 @@ export default {
   mounted() {
     this.selectedUser = UserModel.getCurrentUser();
     this.currentUser = UserModel.getCurrentUser();
-  },
 
-  computed: {
-    spouse: {
-      get() {
-        console.log(UserModel.getMembers());
-        return UserModel.getMemberByProperty('spouseId', this.selectedUser.id);
-      }
-    }
+    this.spouse = UserModel.getMemberByProperty('spouseId', this.selectedUser.id);
+    this.children = UserModel.getMembersByProperty('fatherId', this.selectedUser.id);
   },
 
   methods: {
 
     addSpouse(member) {
-      Contacts
-        .pickContact()
-        .then(contact => {
-          if (contact.phoneNumbers && contact.phoneNumbers.length > 0 && contact.phoneNumbers[0].number) {
-            let phoneNumber = contact.phoneNumbers[0].number;
-            UserModel.addMember({
-              id: phoneNumber,
-              name: contact.name.formatted,
-              phoneNumber: phoneNumber,
-              fatherId: null,
-              motherId: null,
-              spouseId: this.selectedUser.id
-            });
-          }
-        });
+      Contacts.pickContact().then(contact => {
+        contact.spouseId = this.selectedUser.id;
+        this.spouse = contact;
+        UserModel.addMember(contact);
+      });
     },
 
     addChild(member) {
-      Contacts
-        .pickContact()
-        .then(contact => {
-          this.children = this.children || [];
-          this.children.push({
-            name: contact.name.formatted,
-            phoneNumber: contact.phoneNumbers && contact.phoneNumbers.length > 0 ? contact.phoneNumbers[0].number : ''
-          });
-        });
+      Contacts.pickContact().then(contact => {
+        contact.fatherId = this.selectedUser.id;
+        contact.motherId = this.spouse.id;
+        this.children = this.children || [];
+        this.children.push(contact);
+        UserModel.addMember(contact);
+      });
+    },
+
+    deleteSpouse() {
+      this.spouse = {};
+    },
+
+    deleteChildMember(member) {
+      let index = this.children.indexOf(member);
+
+      this.children.splice(index, 1);
+      // UserModel.deleteMember(member.id);
     }
 
   }
