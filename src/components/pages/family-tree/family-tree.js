@@ -1,6 +1,7 @@
 import TreeNode from './tree-node/tree-node.vue';
 import UserModel from '../../../model/user';
 import Contacts from '../../../service/contacts';
+import ActionSheet from '../../common/action-sheet/action-sheet.vue';
 
 export default {
   name: 'FamilyTree',
@@ -17,16 +18,6 @@ export default {
   },
 
   mounted() {
-
-
-    Contacts
-      .getList()
-      .then(contacts => {
-
-        console.log(JSON.stringify(contacts));
-
-      });
-
     this.currentUser = UserModel.getCurrentUser();
 
     this.selectedUser = UserModel.getCurrentUser();
