@@ -10,6 +10,7 @@
   max-width: 50%;
   width: 47%;
   float: left;
+  z-index: 100;
 
   .member-inner{
     position: relative;

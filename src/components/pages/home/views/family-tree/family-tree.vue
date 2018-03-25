@@ -44,18 +44,18 @@
       </Member>
 
       <Member
-        v-if="!selectedUser.spouse" option='spouse' @click="onSelectMemberOptions('spouse')">
+        v-if="!selectedUser.spouse" option='spouse' @click="onSelectMemberOptions">
       </Member>
 
       <div class="children">
         <div class="tree-list-item" v-for="child in selectedUser.children" :key="child.id">
           <Member :member="child"></Member>
           <Member :member="child.spouse"></Member>
-          <Member v-if="!child.spouse" option='spouse' @click="onSelectMemberOptions('spouse')"></Member>
+          <Member v-if="!child.spouse" option='spouse' @click="onSelectMemberOptions"></Member>
         </div>
 
         <div class="tree-list-item tree-list-item-add">
-          <Member option='child' @click="onSelectMemberOptions('child')" ></Member>
+          <Member option='child' @click="onSelectMemberOptions" ></Member>
         </div>
       </div>
 

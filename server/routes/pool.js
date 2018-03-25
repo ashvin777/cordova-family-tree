@@ -3,11 +3,12 @@ const {
 } = require('pg');
 
 const pool = new Pool({
-  user: 'postgres',
-  database: 'FT',
-  password: 'postgres',
-  host: 'localhost',
-  port: 5432
+  user: 'lplzlyagflntsq',
+  database: 'd470vbetfgpg2s',
+  password: '1da340036af028ba71f7097482b45269e690484177981f8d427927f5db5126e5',
+  host: 'ec2-79-125-117-53.eu-west-1.compute.amazonaws.com',
+  port: 5432,
+    ssl: true
 });
 
 let query = (queryString, params = []) => {
