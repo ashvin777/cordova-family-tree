@@ -10,14 +10,16 @@ export default {
   },
 
   methods: {
-    register() {
+    register(e) {
+
+      if (e) e.preventDefault();
 
       APIInstance.post('user', this.form)
         .then(res => res.json())
         .then(res => {
           if (res instanceof Array && res.length > 0) {
             localStorage.user = JSON.stringify(res[0]);
-            this.$router.push('home/family-tree');
+            this.$router.push('/home/family-tree');
           } else {
             alert(res.detail);
           }

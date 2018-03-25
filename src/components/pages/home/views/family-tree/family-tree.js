@@ -37,16 +37,11 @@ export default {
     this.selectedUser = JSON.parse(localStorage.user);
     this.user = JSON.parse(localStorage.user);
 
-    //Fetch user tree entries details
-    let treeEntries = await this.fetchTreeData(this.user);
-    if (treeEntries instanceof Array && treeEntries.length > 0) {
-      this.treeEntries = treeEntries;
-      this.selectedTreeEntry = treeEntries[0];
-    }
-    this.loading = false;
-
+    this.getTreeEntries(this.user);
     this.getSpouse(this.selectedUser);
     this.getChildren(this.selectedUser);
+
+    //isTreeFormModalVisible = false
   },
 
   methods: {
@@ -79,6 +74,21 @@ export default {
         .then(res => {
           this.$set(user, 'children', res);
         });
+    },
+
+    async getTreeEntries(user) {
+      //Fetch user tree entries details
+      this.loading = false;
+
+      let treeEntries = await this.fetchTreeData(user);
+      if (treeEntries instanceof Array && treeEntries.length > 0) {
+        this.treeEntries = treeEntries;
+        this.selectedTreeEntry = treeEntries[0];
+      }
+    },
+
+    onTreeCreated() {
+      this.getTreeEntries(this.user);
     },
 
     onMemberAdded(member) {

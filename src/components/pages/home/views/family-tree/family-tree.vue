@@ -7,7 +7,7 @@
     <TreeFormModal
       v-if="isTreeFormModalVisible"
       :user="selectedUser"
-      @close="isTreeFormModalVisible = false">
+      @close="onTreeCreated">
     </TreeFormModal>
 
     <MemberOptionsModal

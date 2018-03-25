@@ -17,10 +17,7 @@ Vue.use(Router);
 export default new Router({
   routes: [{
     path: '/',
-    redirect: PATH.LOADING
-  }, {
-    path: PATH.LOADING,
-    component: Loading,
+    component: Loading
   }, {
     path: PATH.REGISTER,
     component: Register

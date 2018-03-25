@@ -1,6 +1,6 @@
 
 <template>
-  <form class="page" @submit="register">
+  <form class="page" @submit.prevent="register">
 
     <header>
       <img src="../../../../static/logo.svg"/>
