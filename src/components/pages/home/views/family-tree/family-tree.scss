@@ -1,0 +1,57 @@
+@import "../../../../../style/consts.scss";
+
+.page{
+  overflow: scroll;
+
+  .empty-state{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    p {
+      color: $gray;
+      font-size: $font-small;
+    }
+
+    img {
+      padding-bottom: 1rem;
+      width: 100px;
+    }
+  }
+
+  .tree-list-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0 1rem;
+    clear: both;
+
+    .member.root{
+      .member-inner:before{
+        display: none;
+      }
+    }
+
+    .children{
+      position: relative;
+      padding-top: 2rem;
+      padding-left: 2rem;
+
+      &:before{
+        content: '';
+        position: absolute;
+        width: 0px;
+        border-left: 2px solid $light-blue;
+        top: 56px;
+        height: calc( 100% - 19px );
+        left: 45px;
+      }
+
+    }
+  }
+
+}

@@ -11,9 +11,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./style/common.scss";
-@import "./assets/style.css";
 @import "./style/normalize.css";
+@import "./assets/style.css";
+
+@import "./style/common.scss";
+@import "./style/form.scss";
+
+@import "./style/modal.scss";
+
 
 [v-cloak] {
   display: none;

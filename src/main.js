@@ -13,9 +13,9 @@ function startVue() {
     render: h => h(App)
   });
 
-  FastClick.attach(document.body);
-  StatusBar.overlaysWebView(false);
-  StatusBar.backgroundColorByHexString('#3b49f5');
+  // FastClick.attach(document.body);
+  // StatusBar.overlaysWebView(false);
+  // StatusBar.backgroundColorByHexString('#3b49f5');
 
 }
 

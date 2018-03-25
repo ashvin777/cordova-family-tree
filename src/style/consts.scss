@@ -10,12 +10,14 @@ $font-larger: 1.25rem;
 $font-largest: 1.5rem;
 
 $light-blue:#3b49f5;
+$light-blue-shade:#3863ad;
 $blue: darken($light-blue, 5%);
 $lighter-blue:lighten($light-blue, 2%);
+$red: #d62121;
 
 $gray: #acacbc;
 $light-gray: #cdccc6;
 $lighter-gray: lighten($light-gray, 10% );
-$lightest-gray: lighten($light-gray, 18% );
+$lightest-gray: rgba(135, 160, 206, 0.12);
 $white: white;
 $black: black;

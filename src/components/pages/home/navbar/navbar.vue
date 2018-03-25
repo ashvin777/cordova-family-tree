@@ -5,7 +5,7 @@
 
       <div class="title">
         {{user.name}}
-        <div class="subtitle">{{user.phoneNumber}}</div>
+        <div class="subtitle">{{user.mobile}}</div>
       </div>
 
       <div class="right">
@@ -14,21 +14,21 @@
     </header>
 
     <div class="subheader">
+      <router-link class="link" :to="PATH.FAMILY_TREE" :class="{ active: $route.path === PATH.FAMILY_TREE}">
+        <img src="../../../../../static/logo.svg"/>
+      </router-link>
       <router-link class="link" :to="PATH.ALL_MEMBERS" :class="{ active: $route.path === PATH.ALL_MEMBERS}">
         All members
       </router-link>
-      <router-link class="link" :to="PATH.FAMILY_TREE" :class="{ active: $route.path === PATH.FAMILY_TREE}">
-        Family tree
-      </router-link>
-      <router-link class="link" :to="PATH.FAVOURITE" :class="{ active: $route.path === PATH.FAVOURITE}">
+      <!-- <router-link class="link" :to="PATH.FAVOURITE" :class="{ active: $route.path === PATH.FAVOURITE}">
         Favourite
-      </router-link>
+      </router-link> -->
     </div>
   </div>
 </template>
 
 <script>
-  import PATH from '../../../router/path.js';
+  import PATH from '../../../../router/path.js';
 
   export default {
     name: 'Navbar',
@@ -41,7 +41,8 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../../style/consts.scss";
+  @import "../../../../style/consts.scss";
+
   header {
     background: $light-blue;
     display: flex;
@@ -49,6 +50,7 @@
     align-items: center;
     padding: 1rem 1rem;
     position: relative;
+
     .image {
       border-radius: 100%;
       display: inline-block;
@@ -61,11 +63,16 @@
       background-color: $gray;
       box-shadow: unset;
     }
+
     .title {
       flex: 1;
       font-weight: bold;
       padding: 0 1rem;
-      font-size: $font-largest;
+      font-size: $font-larger;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
       .subtitle {
         color: $light-gray;
         font-size: $font-normal;
@@ -90,6 +97,13 @@
       margin-right: 0px;
       position: relative;
       text-decoration: none;
+      text-align: center;
+
+      img {
+        height: 20px;
+        display: block;
+        margin: auto;
+      }
 
       &.active {
         color: $white;
@@ -106,6 +120,7 @@
           z-index: 100;
         }
       }
+
       &:hover, &:active {
         color: $white;
       }

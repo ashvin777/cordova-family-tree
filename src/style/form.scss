@@ -1,0 +1,73 @@
+input, select{
+  appearance: none;
+  border: 0;
+  width: 100%;
+  padding: 0.75rem 0rem;
+  background: transparent;
+  font-size: $font-normal;
+  position: relative;
+  border-radius: 0px;
+  border-bottom: 2px solid $lighter-gray;
+
+  user-select: initial;
+
+  &:focus {
+    outline: 0;
+    border-bottom: 2px solid $light-blue;
+  }
+}
+
+button{
+  background: $light-blue;
+  border: 0;
+  appearance: none;
+  color: $white;
+  padding: 0.75rem 1rem;
+  outline: 0;
+  margin: 1rem 0;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background 100ms;
+
+  &:hover{
+    background: lighten($light-blue, 5%);
+  }
+
+  &:active{
+    background: darken($light-blue, 5%);
+  }
+
+  &.full{
+    display: block;
+    width: 100%;
+  }
+
+  &.secondary{
+    background: $gray;
+
+    &:hover{
+      background: lighten($gray, 5%);
+    }
+
+    &:active{
+      background: darken($gray, 5%);
+    }
+  }
+
+  &.destructive{
+    background: $red;
+
+    &:hover{
+      background: lighten($red, 5%);
+    }
+
+    &:active{
+      background: darken($red, 5%);
+    }
+  }
+}
+
+input,
+select {
+  margin-bottom: 1rem;
+}

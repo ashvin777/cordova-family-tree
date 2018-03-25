@@ -1,7 +1,9 @@
 const PATH = {
-  ALL_MEMBERS: '/all-members',
-  FAMILY_TREE: '/family-tree',
-  FAVOURITE: '/favourite',
+  ALL_MEMBERS: '/home/all-members',
+  FAMILY_TREE: '/home/family-tree',
+  REGISTER: '/register',
+  LOADING: '/loading',
+  HOME: '/home',
   MAIN: '/'
 };
 
