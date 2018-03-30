@@ -13,8 +13,6 @@ function startVue() {
     render: h => h(App)
   });
 
-  localStorage.user = null;
-
   // FastClick.attach(document.body);
   // StatusBar.overlaysWebView(false);
   // StatusBar.backgroundColorByHexString('#3b49f5');

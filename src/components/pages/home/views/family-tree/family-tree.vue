@@ -25,7 +25,7 @@
     </MemberDetailsModal>
 
     <div class="empty-state" v-if="loading === false && treeEntries && treeEntries.length === 0">
-      <img src="../../../../../../static/logo.svg"/>
+      <img src="/static/logo.svg"/>
       <p>There is no family tree associated with for your profile.</p>
       <button @click="isTreeFormModalVisible = true">Let's create one</button>
     </div>

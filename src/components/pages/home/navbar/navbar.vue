@@ -15,7 +15,7 @@
 
     <div class="subheader">
       <router-link class="link" :to="PATH.FAMILY_TREE" :class="{ active: $route.path === PATH.FAMILY_TREE}">
-        <img src="../../../../../static/logo.svg"/>
+        <img src="/static/logo.svg"/>
       </router-link>
       <router-link class="link" :to="PATH.ALL_MEMBERS" :class="{ active: $route.path === PATH.ALL_MEMBERS}">
         All members

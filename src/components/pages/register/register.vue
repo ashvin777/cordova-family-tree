@@ -3,7 +3,7 @@
   <form class="page" @submit.prevent="register">
 
     <header>
-      <img src="../../../../static/logo.svg"/>
+      <img src="/static/logo.svg"/>
       <h3>Family <b>tree</b></h3>
     </header>
 

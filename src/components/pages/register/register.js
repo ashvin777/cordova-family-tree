@@ -1,4 +1,5 @@
 import APIInstance from '../../../service/api';
+import PATH from '../../../router/path';
 
 export default {
   data() {
@@ -19,7 +20,7 @@ export default {
         .then(res => {
           if (res instanceof Array && res.length > 0) {
             localStorage.user = JSON.stringify(res[0]);
-            this.$router.push('/home/family-tree');
+            this.$router.push(PATH.FAMILY_TREE);
           } else {
             alert(res.detail);
           }
