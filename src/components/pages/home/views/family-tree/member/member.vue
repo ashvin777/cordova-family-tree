@@ -6,9 +6,9 @@
 .member{
   position: relative;
   padding: 1rem 0;
-  padding-left: 3%;
-  max-width: 50%;
-  width: 47%;
+  padding-left: 10px;
+  min-width: 150px;
+  width: auto;
   float: left;
   z-index: 100;
 
@@ -53,10 +53,10 @@
     .image{
       box-shadow: unset;
       background: $white;
-      height: 35px;
-      width: 35px;
-      min-width: 35px;
-      margin-left: 3px;
+      height: 36px;
+      width: 36px;
+      min-width: 36px;
+      margin: 2px;
     }
 
     &.self{

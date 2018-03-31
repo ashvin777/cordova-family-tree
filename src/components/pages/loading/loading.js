@@ -8,7 +8,7 @@ export default {
         this.$router.push(PATH.FAMILY_TREE);
       }
     } catch (err) {
-      this.$router.push(PATH.REGISTER);
+      this.$router.push(PATH.OTP);
     }
   }
 }

@@ -1,7 +1,7 @@
 <script src="./member-details.js"></script>
 
 <template>
-  <form class="modal" @submit="submit">
+  <form class="modal" @submit.prevent="submit">
     <div class="modal-inner">
 
       <div class="modal-body">
@@ -17,11 +17,11 @@
       </div>
 
       <div class="modal-footer">
-        <button class="secondary" @click="$emit('close')">
+        <button type="button" class="secondary" @click="$emit('close')">
           Cancel
         </button>
 
-        <button>
+        <button type="submit">
           <span class="icon-plus"></span>
           Add {{action}}
         </button>

@@ -1,7 +1,7 @@
 <script src="./tree-form.js"></script>
 
 <template>
-  <form class="modal" @submit="submit">
+  <form class="modal" @submit.prevent="submit">
     <div class="modal-inner">
 
       <div class="modal-body">
