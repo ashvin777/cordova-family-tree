@@ -12,8 +12,9 @@ export default {
 
 <style lang="scss">
 @import "./style/normalize.css";
+@import "./style/font-icons.scss";
 @import "./style/icons.scss";
-
+@import "./style/animate.scss";
 @import "./style/common.scss";
 @import "./style/form.scss";
 

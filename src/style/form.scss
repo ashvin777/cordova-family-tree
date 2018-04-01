@@ -22,12 +22,13 @@ button{
   border: 0;
   appearance: none;
   color: $white;
-  padding: 0.75rem 1rem;
   outline: 0;
   margin: 1rem 0;
   border-radius: 50px;
   font-weight: 500;
+  line-height: 50px;
   transition: background 100ms;
+  box-shadow: 0 0 5px 0 $gray;
 
   &:hover{
     background: lighten($light-blue, 5%);
@@ -65,9 +66,34 @@ button{
       background: darken($red, 5%);
     }
   }
+
+  &.circle{
+    height: 50px;
+    width: 50px;
+  }
 }
 
 input,
 select {
   margin-bottom: 1rem;
+}
+
+
+.form-group{
+  position: relative;
+  text-align: left;
+
+  label{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $gray;
+    font-size: $font-smallest;
+  }
+
+  > [class^="icon-"]{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    color: $gray;
+  }
 }

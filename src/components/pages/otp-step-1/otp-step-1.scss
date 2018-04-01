@@ -1,0 +1,43 @@
+@import '../../../style/consts.scss';
+
+.page{
+  position: relative;
+
+  header{
+    padding: 3rem 1rem 1rem;
+    background: $light-blue;
+    color: $white;
+    text-align: center;
+    animation: fadeIn 300ms;
+
+    .title{
+      font-size: $font-large;
+      font-weight: 500;
+      padding: 1rem 0;
+    }
+
+    img{
+      height: 150px;
+      margin: 10px 0;
+      display: inline-block;
+    }
+  }
+
+  form{
+    padding: 2rem;
+    text-align: center;
+
+    small{
+      font-size: $font-small;
+      color: $gray;
+    }
+
+    button{
+      margin: auto;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

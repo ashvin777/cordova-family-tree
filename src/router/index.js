@@ -5,7 +5,8 @@ import PATH from './path.js';
 //INITIAL PAGES
 import Loading from '../components/pages/loading/loading.vue';
 import Register from '../components/pages/register/register.vue';
-import Otp from '../components/pages/otp/otp.vue';
+import OTP_STEP_1 from '../components/pages/otp-step-1/otp-step-1.vue';
+import OTP_STEP_2 from '../components/pages/otp-step-2/otp-step-2.vue';
 
 //HOME
 import Home from '../components/pages/home/home.vue';
@@ -23,8 +24,11 @@ export default new Router({
     path: PATH.REGISTER,
     component: Register
   }, {
-    path: PATH.OTP,
-    component: Otp
+    path: PATH.OTP_STEP_1,
+    component: OTP_STEP_1
+  }, {
+    path: PATH.OTP_STEP_2,
+    component: OTP_STEP_2
   }, {
     path: PATH.HOME,
     component: Home,
